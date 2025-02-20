@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Haven - Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #3E2723;
+            color: #f8f9fa;
+            font-family: 'Georgia', serif;
+        }
+        .navbar {
+            background-color: #5D4037 !important;
+        }
+        .menu-header {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFCC80;
+        }
+        .menu-container {
+            background-color: #4E342E;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+        }
+        .menu-container img {
+            max-width: 800px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .menu-item {
+            background-color: #6D4C41;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            color: #FFCC80;
+        }
+        .menu-item h2 {
+            color: #FFAB40;
+        }
+        .menu-item p {
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Brew Haven</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="menu-header">Our Delicious Menu</h1>
+
+        <div class="menu-container">
+            <img src="menu_board_professional.png" alt="Professional Coffee Shop Menu">
+
+            <div class="menu-item">
+                <h2>Signature Coffees</h2>
+                <p>Americano - $3.50 | Cappuccino - $4.50 | Mocha - $5.00 | Latte - $4.00</p>
+            </div>
+
+            <div class="menu-item">
+                <h2>Freshly Baked Croissants</h2>
+                <p>Plain Croissant - $3.00 | Chocolate Croissant - $3.50 | Almond Croissant - $3.75</p>
+            </div>
+
+            <div class="menu-item">
+                <h2>International Breads</h2>
+                <p>Portuguese Sweet Bread - $4.50 | Indian Naan - $3.50 | American Sourdough - $5.00</p>
+            </div>
+
+            <div class="menu-item">
+                <h2>Brunch Specialties</h2>
+                <p>Spinach & Cheese Quiche - $6.50 | Garden Salad - $7.00 | Smoked Salmon Toast - $8.50</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center p-3 mt-4" style="background-color: #4E342E;">
+        <p>Brew Haven | 123 Coffee St, Java City | Open: Mon-Sat 7am - 10pm</p>
+    </footer>
+</body>
+</html>
