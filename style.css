@@ -1,13 +1,31 @@
-/* General styles */
+/* styles.css */
+
+/* General Styles */
 body {
     font-family: 'Georgia', serif;
     background-color: #3E2723;
     color: #f8f9fa;
+    margin: 0;
+    padding: 0;
 }
 
 /* Navbar */
 .navbar {
     background-color: #5D4037 !important;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('/images/home_background.png') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /* Footer */
@@ -19,52 +37,7 @@ footer {
     color: #f8f9fa;
 }
 
-/* Table styling */
-table {
-    width: 80%;
-    border-collapse: collapse;
-    margin: 20px auto;
-    background-color: #4E342E;
-    color: white;
-    text-align: center;
-    border-radius: 10px;
-}
-th, td {
-    border: 2px solid black;
-    padding: 10px;
-}
-th {
-    background-color: #6D4C41;
-}
-
-/* Contact Form */
-.contact-form {
-    background-color: #4E342E;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: auto;
-}
-
-/* Blog styling */
-.blog-post {
-    background-color: #4E342E;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
-}
-
-.blog-post h2 {
-    color: #FFCC80;
-}
-
-.blog-post a {
-    color: #FFAB40;
-    text-decoration: none;
-    font-weight: bold;
-}
-/* Improved Table Styling */
+/* Table Styling */
 table {
     width: 80%;
     margin: 20px auto;
@@ -76,30 +49,69 @@ table {
     color: white;
     text-align: center;
 }
-
 th, td {
     padding: 15px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
-
 th {
     background: linear-gradient(to right, #6D4C41, #8D6E63);
     color: #FFCC80;
     text-transform: uppercase;
     font-weight: bold;
 }
-
 tr:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-.category {
-    background-color: #8D6E63;
-    font-weight: bold;
-    color: #FFD180;
-    font-size: 1.2em;
+/* Menu Page */
+.menu-container {
+    background-color: #4E342E;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+}
+.menu-item {
+    background-color: #6D4C41;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+    color: #FFCC80;
+}
+.menu-item h2 {
+    color: #FFAB40;
 }
 
-.category td {
+/* Contact Form */
+.contact-form {
+    background-color: #4E342E;
     padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Blog Post */
+.blog-post {
+    background-color: #4E342E;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+}
+.blog-post h2 {
+    color: #FFCC80;
+}
+.blog-post a {
+    color: #FFAB40;
+    text-decoration: none;
+    font-weight: bold;
+}
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+/* Vue-Specific Styling */
+[v-cloak] {
+    display: none;
 }
