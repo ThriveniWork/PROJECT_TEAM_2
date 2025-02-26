@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brew Haven - Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -47,6 +49,64 @@
         .menu-item p {
             font-size: 1rem;
         }
+        .cart-section {
+            background-color: #4E342E;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .cart-section h2 {
+            color: #FFCC80;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #6D4C41;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .add-to-cart-btn {
+            background-color: #FFAB40;
+            color: #3E2723;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-to-cart-btn:hover {
+            background-color: #FFCC80;
+        }
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #FFCC80;
+            cursor: pointer;
+        }
+        .cart-icon:hover {
+            color: #FFAB40;
+        }
+        .delete-icon {
+            color: #FF6B6B;
+            cursor: pointer;
+        }
+        .delete-icon:hover {
+            color: #FF3B3B;
+        }
     </style>
 </head>
 <body>
@@ -70,6 +130,12 @@
         </div>
     </nav>
 
+    <!-- Cart Icon -->
+    <div class="cart-icon" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+    </div>
+
     <div class="container mt-5">
         <h1 class="menu-header">Our Delicious Menu</h1>
 
@@ -80,77 +146,101 @@
                     <tr>
                         <th>Item</th>
                         <th>Price</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="category">
-                        <td colspan="2">Signature Coffees</td>
+                        <td colspan="3">Signature Coffees</td>
                     </tr>
                     <tr>
                         <td>Americano</td>
                         <td>$3.50</td>
+                        <td><button class="add-to-cart-btn" data-name="Americano" data-price="3.50">Add to Cart</button></td>
                     </tr>
                     <tr>
                         <td>Cappuccino</td>
                         <td>$4.50</td>
+                        <td><button class="add-to-cart-btn" data-name="Cappuccino" data-price="4.50">Add to Cart</button></td>
                     </tr>
                     <tr>
                         <td>Mocha</td>
                         <td>$5.00</td>
+                        <td><button class="add-to-cart-btn" data-name="Mocha" data-price="5.00">Add to Cart</button></td>
                     </tr>
                     <tr>
                         <td>Latte</td>
                         <td>$4.00</td>
+                        <td><button class="add-to-cart-btn" data-name="Latte" data-price="4.00">Add to Cart</button></td>
                     </tr>
                     <tr class="category">
-                        <td colspan="2">Freshly Baked Croissants</td>
+                        <td colspan="3">Freshly Baked Croissants</td>
                     </tr>
                     <tr>
                         <td>Plain Croissant</td>
                         <td>$3.00</td>
+                        <td><button class="add-to-cart-btn" data-name="Plain Croissant" data-price="3.00">Add to Cart</button></td>
                     </tr>
                     <tr>
                         <td>Chocolate Croissant</td>
                         <td>$3.50</td>
+                        <td><button class="add-to-cart-btn" data-name="Chocolate Croissant" data-price="3.50">Add to Cart</button></td>
                     </tr>
                     <tr>
                         <td>Almond Croissant</td>
                         <td>$3.75</td>
+                        <td><button class="add-to-cart-btn" data-name="Almond Croissant" data-price="3.75">Add to Cart</button></td>
                     </tr>
                     <tr class="category">
-                        <td colspan="2">International Breads</td>
+                        <td colspan="3">International Breads</td>
                     </tr>
                     <tr>
                         <td>Portuguese Sweet Bread</td>
                         <td>$4.50</td>
+                        <td><button class="add-to-cart-btn" data-name="Portuguese Sweet Bread" data-price="4.50">Add to Cart</button></td>
                     </tr>
                     <tr>
                         <td>Indian Naan</td>
                         <td>$3.50</td>
+                        <td><button class="add-to-cart-btn" data-name="Indian Naan" data-price="3.50">Add to Cart</button></td>
                     </tr>
                     <tr>
                         <td>American Sourdough</td>
                         <td>$5.00</td>
+                        <td><button class="add-to-cart-btn" data-name="American Sourdough" data-price="5.00">Add to Cart</button></td>
                     </tr>
                     <tr class="category">
-                        <td colspan="2">Brunch Specialties</td>
+                        <td colspan="3">Brunch Specialties</td>
                     </tr>
                     <tr>
                         <td>Spinach & Cheese Quiche</td>
                         <td>$6.50</td>
+                        <td><button class="add-to-cart-btn" data-name="Spinach & Cheese Quiche" data-price="6.50">Add to Cart</button></td>
                     </tr>
                     <tr>
                         <td>Garden Salad</td>
                         <td>$7.00</td>
+                        <td><button class="add-to-cart-btn" data-name="Garden Salad" data-price="7.00">Add to Cart</button></td>
                     </tr>
                     <tr>
                         <td>Smoked Salmon Toast</td>
                         <td>$8.50</td>
+                        <td><button class="add-to-cart-btn" data-name="Smoked Salmon Toast" data-price="8.50">Add to Cart</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
+        <!-- Cart Section -->
+        <div class="cart-section" id="cart-section" style="display: none;">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <p>Total: $<span id="cart-total">0.00</span></p>
+        </div>
     </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">Item added to cart!</div>
 
     <footer class="text-center p-3 mt-4" style="background-color: #4E342E;">
         <p>Brew Haven | 123 Coffee St, Jersey City, NJ 03312 | Open: Mon-Sat 7am - 10pm</p>
@@ -158,5 +248,73 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        const cart = [];
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        const notification = document.getElementById('notification');
+        const cartCount = document.getElementById('cart-count');
+        const cartSection = document.getElementById('cart-section');
+
+        // Function to add item to cart
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+            showNotification();
+        }
+
+        // Function to remove item from cart
+        function removeFromCart(index) {
+            cart.splice(index, 1); // Remove the item at the specified index
+            updateCart();
+        }
+
+        // Function to update the cart display
+        function updateCart() {
+            cartItemsContainer.innerHTML = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <span>${item.name}</span>
+                    <span>$${item.price.toFixed(2)}</span>
+                    <i class="fas fa-trash delete-icon" onclick="removeFromCart(${index})"></i>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+                total += item.price;
+            });
+            cartTotal.textContent = total.toFixed(2);
+            cartCount.textContent = cart.length;
+        }
+
+        // Function to show notification
+        function showNotification() {
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 2000);
+        }
+
+        // Function to toggle cart visibility
+        function toggleCart() {
+            if (cartSection.style.display === 'none') {
+                cartSection.style.display = 'block';
+            } else {
+                cartSection.style.display = 'none';
+            }
+        }
+
+        // Add event listeners to "Add to Cart" buttons
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                addToCart(name, price);
+            });
+        });
+    </script>
 </body>
 </html>

@@ -16,13 +16,13 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: url('/images/home_background.png') no-repeat center center/cover;
+    background: url('/images/home_background.PNG') no-repeat center center/cover;
     height: 400px;
     display: flex;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: rgba(247, 245, 245, 0.693);
     font-size: 2rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
